@@ -11,11 +11,28 @@ class App extends Component {
   state = {
     cartoons,
     score: 0,
+    clickedCardIds: []
   };
 
-  handleScore = event => {
-    const score = this.state.score + 1;
-    this.setState({ score: score })
+  handleScore = clickedId => {
+    var contained = false;
+    for (var i = 0; i < this.state.clickedCardIds.length; i++) {
+      if (this.state.clickedCardIds[i] == clickedId) {
+        contained = true;
+        break;
+      } 
+    }
+
+    if (contained) {
+      this.setState({ 
+        score: 0 , 
+        clickedCardIds: []
+      });
+    } else {
+      this.state.clickedCardIds.push(clickedId)
+      const score = this.state.score + 1;
+      this.setState({ score: score })
+    }
   }
 
   render() {
