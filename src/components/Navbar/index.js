@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
 
-function Navbar() {
+function Navbar(props) {
     return (
         <div className="navbar">
             <ul>
                 <li className="brand">Clicky Game</li>
                 <li>Click an image to begin!</li>
-                <li>Score: | Top Score:</li>
+                <li>Score: {props.score} | Top Score:</li>
             </ul>
 
         </div>
