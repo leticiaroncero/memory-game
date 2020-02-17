@@ -5,8 +5,12 @@
     margin: 8px 25px;
 }
 
-.card > .img-container > img {
+.card>.img-container>img {
     object-fit: contain;
     height: 170px;
     width: 170px;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }

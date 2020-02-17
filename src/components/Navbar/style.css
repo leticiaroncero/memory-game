@@ -1,6 +1,9 @@
 .navbar {
-    background-color: salmon;
+    background-color: #e1032e;
     min-height: 80px;
+    color: #fff;
+    font-family: 'Pangolin', cursive;
+    font-size: 20px;
 }
 
 .navbar>ul {

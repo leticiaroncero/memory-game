@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import logo from './logo.svg';
-// import './App.css';
+import './App.css';
 import Navbar from "./components/Navbar";
 import CartoonCard from "./components/CartoonCard";
 import cartoons from "./cartoons.json";
@@ -35,15 +35,15 @@ class App extends Component {
       const score = this.state.score + 1;
       const topScore = this.state.topScore + 1;
       if (score === topScore) {
-        this.setState({ 
-          score: score, 
+        this.setState({
+          score: score,
           topScore: topScore,
-          cartoons: this.shuffle(this.state.cartoons) 
-          })
+          cartoons: this.shuffle(this.state.cartoons)
+        })
       } else {
-        this.setState({ 
-          score: score, 
-          cartoons: this.shuffle(this.state.cartoons) 
+        this.setState({
+          score: score,
+          cartoons: this.shuffle(this.state.cartoons)
         })
       }
     }
@@ -74,16 +74,18 @@ class App extends Component {
         <Navbar
           score={this.state.score}
           topScore={this.state.topScore} />
-        {
-          this.state.cartoons.map(cartoon => (
-            <CartoonCard
-              image={cartoon.image}
-              key={cartoon.id}
-              id={cartoon.id}
-              handleScore={this.handleScore}
-            />)
-          )
-        }
+        <div className="cards-container">
+          {
+            this.state.cartoons.map(cartoon => (
+              <CartoonCard
+                image={cartoon.image}
+                key={cartoon.id}
+                id={cartoon.id}
+                handleScore={this.handleScore}
+              />)
+            )
+          }
+        </div>
       </div>
     )
   }
