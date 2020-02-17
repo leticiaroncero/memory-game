@@ -11,27 +11,33 @@ class App extends Component {
   state = {
     cartoons,
     score: 0,
-    clickedCardIds: []
+    clickedCardIds: [],
+    topScore: 0
   };
 
   handleScore = clickedId => {
     var contained = false;
     for (var i = 0; i < this.state.clickedCardIds.length; i++) {
-      if (this.state.clickedCardIds[i] == clickedId) {
+      if (this.state.clickedCardIds[i] === clickedId) {
         contained = true;
         break;
-      } 
+      }
     }
 
     if (contained) {
-      this.setState({ 
-        score: 0 , 
-        clickedCardIds: []
+      this.setState({
+        score: 0,
+        clickedCardIds: [],
       });
     } else {
       this.state.clickedCardIds.push(clickedId)
       const score = this.state.score + 1;
-      this.setState({ score: score })
+      const topScore = this.state.topScore + 1;
+      if (score === topScore) {
+        this.setState({ score: score, topScore: topScore })
+      } else {
+        this.setState({ score: score })
+      }
     }
   }
 
@@ -39,7 +45,8 @@ class App extends Component {
     return (
       <div>
         <Navbar
-          score={this.state.score} />
+          score={this.state.score}
+          topScore={this.state.topScore} />
         {
           this.state.cartoons.map(cartoon => (
             <CartoonCard
