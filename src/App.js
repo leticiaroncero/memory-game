@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero"
 import CartoonCard from "./components/CartoonCard";
 import cartoons from "./cartoons.json";
 
@@ -31,7 +32,7 @@ class App extends Component {
         cartoons: this.shuffle(this.state.cartoons)
       });
     } else {
-      this.state.clickedCardIds.push(clickedId)
+      this.state.clickedCardIds.push(clickedId);
       const score = this.state.score + 1;
       const topScore = this.state.topScore + 1;
       if (score === topScore) {
@@ -74,6 +75,7 @@ class App extends Component {
         <Navbar
           score={this.state.score}
           topScore={this.state.topScore} />
+        <Hero />
         <div className={this.state.score === 0 && this.state.topScore !== 0 ? "cards-container shake-shake" : "cards-container"}>
           {
             this.state.cartoons.map(cartoon => (

@@ -1,0 +1,17 @@
+.hero-image {
+    min-height: 350px;
+    padding-top: 80px;
+    text-align: center;
+    background-image: url("https://pics.prcm.jp/3744a5f604f17/81841686/png/81841686.png");
+    background-position: right 20px bottom -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px #333333;
+}
