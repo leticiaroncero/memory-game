@@ -81,6 +81,7 @@ class App extends Component {
             this.state.cartoons.map(cartoon => (
               <CartoonCard
                 image={cartoon.image}
+                alt={cartoon.alt}
                 key={cartoon.id}
                 id={cartoon.id}
                 handleScore={this.handleScore}
