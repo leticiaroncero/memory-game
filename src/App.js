@@ -74,7 +74,7 @@ class App extends Component {
         <Navbar
           score={this.state.score}
           topScore={this.state.topScore} />
-        <div className="cards-container">
+        <div className={this.state.score === 0 && this.state.topScore !== 0 ? "cards-container shake-shake" : "cards-container"}>
           {
             this.state.cartoons.map(cartoon => (
               <CartoonCard
