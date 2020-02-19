@@ -2,7 +2,13 @@
     display: inline-block;
     border-width: 8px;
     border-radius: 0%;
+    border-color:#dddddd;
     margin: 8px 25px;
+    box-shadow: 3px 3px 8px #cccccc;
+}
+
+.card:hover {
+    box-shadow: 3px 3px 12px #aaaaaa;
 }
 
 .card>.img-container>img {
